@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <mat-card class="login-card">
+      <div class="login-content">
+        <div class="login-image">
+          <img src="assets/img/fondo.png" alt="Background Image" />
+        </div>
+        <div class="login-form">
+          <h3>Consultar <span class="brand">Cliente</span></h3>
+          <form class="mt-3" [formGroup]="form" (ngSubmit)="consultarCliente()">
+
+            <!-- TipoIdentificacion -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Tipo de Identificación</mat-label>
+              <mat-select formControlName="tipoDocumento" required>
+                <mat-option value="">Seleccione...</mat-option>
+                <mat-option value="C">Cédula de Ciudadanía</mat-option>
+                <mat-option value="P">Pasaporte</mat-option>
+              </mat-select>
+              <mat-error *ngIf="error.tipoDocumento.errors"><span *ngIf="error.tipoDocumento.errors.required">¡Advertencia! Campo obligatorio*</span></mat-error>
+            </mat-form-field>
+  
+            <!-- NumeroIdentificacion -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Número de Identificación</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="numeroDocumento"
+                required
+              />
+              <mat-error *ngIf="error.numeroDocumento.errors"><span *ngIf="error.numeroDocumento.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.numeroDocumento.errors"><span>Número entre 8 y 11 caracteres requerido.</span></mat-error>
+            </mat-form-field>
+  
+            <button mat-raised-button color="primary" class="login-button" type="submit" [disabled]="form.invalid">
+              Consultar
+            </button>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  

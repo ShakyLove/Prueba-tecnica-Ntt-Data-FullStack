@@ -1,0 +1,17 @@
+<div class="background d-flex justify-content-center align-items-center vh-100">
+  <mat-card class="profile-card text-center">
+    <div class="profile-header"></div>
+    <img src="assets/img/profile.png" class="profile-image" alt="User Avatar" />
+    <h3 class="profile-name">
+      {{ cliente.primerNombre }} {{ cliente.primerApellido }}
+    </h3>
+    <p class="profile-subtitle">{{ cliente.ciudadResidencia }}</p>
+    <div class="pb-4">
+        <h4 class="profile-info">
+          Dirección: {{ cliente.direccion }} <br />
+          Teléfono: {{ cliente.telefono }}
+        </h4>
+        <button class="mt-3" mat-raised-button color="primary" (click)="volver()">Volver</button>
+    </div>
+  </mat-card>
+</div>
