@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./usuario.component.css'],
 })
 export class UsuarioComponent implements OnInit {
-  cliente: any;
+  cliente: any = {}; 
 
   constructor(private router: Router) {}
 
